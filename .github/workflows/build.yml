@@ -21,3 +21,8 @@ jobs:
           pip install pyinstaller
       - name: Build EXE
         run: pyinstaller --onefile usb_reader.py
+      - name: Upload EXE as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: usb_reader
+          path: dist/usb_reader.exe
