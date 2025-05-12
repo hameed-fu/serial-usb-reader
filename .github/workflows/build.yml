@@ -1,33 +1,23 @@
-name: Build EXE for Windows
+name: Test Workflow
 
-on:
+on: 
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
+    - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.11
-
-    - name: Install PyInstaller
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-
     - name: Build EXE
       run: pyinstaller --onefile usb_reader.py
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2  # Use v2 for stability
-      with:
-        name: usb_reader-exe
-        path: dist/usb_reader.exe
