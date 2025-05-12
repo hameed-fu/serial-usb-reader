@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Set up Python
@@ -24,11 +24,10 @@ jobs:
         pip install pyinstaller
 
     - name: Build EXE
-      run: |
-        pyinstaller --onefile usb_reader.py
+      run: pyinstaller --onefile usb_reader.py
 
-    - name: Upload EXE
-      uses: actions/upload-artifact@v3.1.3
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
       with:
-        name: usb-reader-exe
+        name: usb_reader-exe
         path: dist/usb_reader.exe
