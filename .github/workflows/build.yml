@@ -1,6 +1,6 @@
 name: Test Workflow
 
-on: 
+on:
   push:
     branches:
       - main
@@ -26,4 +26,3 @@ jobs:
       with:
         name: usb_reader
         path: dist/usb_reader.exe
-
