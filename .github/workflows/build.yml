@@ -26,3 +26,4 @@ jobs:
       with:
         name: usb_reader
         path: dist/usb_reader.exe
+
