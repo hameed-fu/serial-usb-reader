@@ -25,10 +25,10 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller --onefile main.py
+        pyinstaller --onefile usb_reader.py
 
     - name: Upload EXE
       uses: actions/upload-artifact@v3.1.3
       with:
         name: usb-reader-exe
-        path: dist/main.exe
+        path: dist/usb_reader.exe
