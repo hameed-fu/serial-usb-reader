@@ -1,0 +1,3 @@
+([('usb_reader',
+   '/Volumes/System 1/Site/python/modbus/dist/usb_reader',
+   'EXECUTABLE')],)
