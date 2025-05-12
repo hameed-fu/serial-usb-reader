@@ -29,7 +29,7 @@ jobs:
       - name: Build EXE
         run: pyinstaller --onefile usb_reader.py
 
-      # Step 5: Debug PyInstaller Output (Optional, for troubleshooting)
+      # Step 5: Debug PyInstaller Output
       - name: Debug PyInstaller Output
         run: |
           echo "Checking dist directory contents:"
@@ -37,7 +37,7 @@ jobs:
 
       # Step 6: Upload the EXE file as an artifact
       - name: Upload EXE as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: usb_reader
           path: dist/usb_reader.exe
